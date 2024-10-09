@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMPORTANT INFORMATION</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        .pay-btn {
+            display: block;
+            width: 300px;
+            background-color: #FF5722;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 20px auto;
+            text-transform: uppercase;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .pay-btn:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Байдуже переміг ти чи ні, продовжуй грати !!!</h1>
+</header>
+
+<a href="{% url 'page_one' %}">
+    <button class="pay-btn">Продовжити</button>
+</a>
+<a href="{% url 'page_one' %}">
+    <button class="pay-btn">Я не буду продовжувати</button>
+</a>
+</body>
+</html>

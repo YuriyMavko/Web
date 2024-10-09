@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game for django</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #game {
+            position: relative;
+            width: 600px;
+            height: 300px;
+            background-color: #87CEEB;
+            border: 2px solid #000;
+            overflow: hidden;
+        }
+        #player {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 10px;
+        }
+        .obstacle {
+            position: absolute;
+            bottom: 50px;
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            border-radius: 5px;
+            animation: moveObstacle 3s linear infinite;
+        }
+        @keyframes moveObstacle {
+            0% { right: -30px; }
+            100% { right: 100%; }
+        }
+        #end-screen {
+            display: none;
+            position: absolute;
+            top: 320px; /* Positioning below the game area */
+            left: 50%;
+            transform: translateX(-50%); /* Center the button horizontally */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #end-button {
+            padding: 20px 40px;
+            font-size: 24px;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #end-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+<div id="end-screen">
+        <button id="end-button">Click on me</button>
+    </div>
+    <div id="game">
+        <div id="player"></div>
+        <div class="obstacle"></div>
+    </div>
+    <script>
+        const player = document.getElementById('player');
+        const obstacle = document.querySelector('.obstacle');
+        const gameArea = document.getElementById('game');
+        const endScreen = document.getElementById('end-screen');
+        const endButton = document.getElementById('end-button');
+        let playerJump = false;
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && !playerJump) {
+                playerJump = true;
+                player.style.bottom = '150px';
+                setTimeout(() => {
+                    player.style.bottom = '100px';
+                    setTimeout(() => {
+                        player.style.bottom = '50px';
+                        playerJump = false;
+                    }, 300);
+                }, 300);
+            }
+        });
+        let checkCollision = setInterval(() => {
+            let playerRect = player.getBoundingClientRect();
+            let obstacleRect = obstacle.getBoundingClientRect();
+            if (playerRect.left < obstacleRect.right &&
+                playerRect.right > obstacleRect.left &&
+                playerRect.top < obstacleRect.bottom &&
+                playerRect.bottom > obstacleRect.top) {
+                gameOver();
+            }
+        }, 50);
+        function gameOver() {
+            gameArea.style.display = 'none';
+            endScreen.style.display = 'flex';
+            clearInterval(checkCollision);
+        }
+        endButton.addEventListener('click', () => {
+            window.location.href = "{% url 'page_two' %}";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список статей</title>
+</head>
+<body>
+    <h1>Список статей</h1>
+    <a href="{% url 'create' %}">Додати статтю</a>
+    <ul>
+        {% for article in articles %}
+            <li>{{ article.title }} - {{ article.description }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
