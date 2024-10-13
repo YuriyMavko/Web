@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Article</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6A82FB, #FC5C7D);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #FC5C7D;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            border-color: #6A82FB;
+            outline: none;
+            box-shadow: 0 0 5px rgba(106, 130, 251, 0.5);
+        }
+
+        input[type="submit"] {
+            background: #FC5C7D;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: #6A82FB;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #6A82FB;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #FC5C7D;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Article</h1>
+        <form action="{% url 'create' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="title" placeholder="Title" required><br>
+            <textarea name="description" placeholder="Description" required></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+        <a href="{% url 'index' %}">Back to Articles</a>
+    </div>
+</body>
+</html>
