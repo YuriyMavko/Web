@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редагувати відгук</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EF036C;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Редагувати відгук</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="title">Заголовок:</label>
+    <input type="text" name="title" value="{{ review.title }}" required>
+
+    <label for="description">Опис:</label>
+    <textarea name="description" required>{{ review.description }}</textarea>
+
+    <label for="store">Магазин:</label>
+    <input type="text" name="store" value="{{ review.store }}" required>
+
+    <label for="rating">Рейтинг:</label>
+    <input type="number" name="rating" value="{{ review.rating }}" min="1" max="5" required>
+
+    <button type="submit">Зберегти зміни</button>
+</form>
+
+</body>
+</html>
