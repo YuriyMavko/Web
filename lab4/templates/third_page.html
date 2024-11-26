@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Так не можна</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e1bee7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://www.example.com/background-image.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            font-size: 55px;
+            color: #6a1b9a;
+            margin-top: 50px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 1.3;
+        }
+
+        .button {
+            padding: 20px 40px;
+            font-size: 22px;
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 40px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background-color: #9c4dcc;
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 span {
+            color: #f6e58d;
+            font-style: italic;
+        }
+
+        .decorative {
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 180px;
+            color: rgba(255, 255, 255, 0.3);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative">🙏</div>
+
+    <h1>Майте <span>Бога</span> в серці!!!</h1>
+
+    <a href="{{ url_for('index') }}" class="button">Взяти Бога в серце</a>
+</body>
+</html>

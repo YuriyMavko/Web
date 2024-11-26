@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Молитва</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e1bee7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #6a1b9a;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .prayer {
+            font-size: 24px;
+            color: #6a1b9a;
+            margin-bottom: 30px;
+            font-style: italic;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .donate-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .donate-container label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #6a1b9a;
+        }
+
+        .donate-container input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #6a1b9a;
+            border-radius: 5px;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 20px 40px;
+            font-size: 22px;
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 40px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background-color: #9c4dcc;
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo {
+            margin-right: 30px;
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            background-color: #d1c4e9;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo:hover {
+            transform: scale(2.5);
+        }
+
+        .form-container {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Молитва за здоров'я до Пресвятої Богородиці</h1>
+
+        <div class="prayer">
+            Пресвята Богородиця, спаси і сохрани дитини мого (ім’я). Захисти його силою своєї і направ життя по праведному, світлого, щасливого шляху. Нехай дитина не знає болю і мук, які уготовані йому бісівським впливом. Умоли Бога і Сина Твого про допомогу моєму чаду. Визволи його від хвороби і залікувати недуги все своєю силою. Нехай він буде під покровом Твоїм денно і нощно в послух Тобі і батькам своїм. Вручаю дитини свого і життя його в руки Твої, про Владичиця. Амінь.
+        </div>
+
+        <div class="form-container">
+            <div class="photo">
+                <img src="static/man_in_black.jpg" alt="фото 3">
+            </div>
+
+            <div class="donate-container">
+                <label for="donation">Введіть суму донату на здоров'я:</label>
+                <input type="number" id="donation" name="donation" placeholder="Сума донату">
+                <a href="{{ url_for('index') }}" class="button">Задонатити</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>З Богом в серці</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e1bee7;
+
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            color: #fff;
+            font-size: 36px;
+            margin-top: 30px;
+        }
+        .container {
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #9c4dcc;
+        }
+        .images {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .images img {
+            width: 200px;
+            margin: 0 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, border 0.3s ease;
+        }
+        .images img:hover {
+            transform: scale(2.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>Бажаєте замовити для себе молитву і задонатити на здоров'я?</h1>
+
+    <div class="container">
+        <a href="{{ url_for('second_page') }}" class="button">Перейти на сторінку молитви</a>
+        <br><br>
+        <a href="{{ url_for('third_page') }}" class="button">Я атеїст</a>
+    </div>
+
+    <div class="images">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTki8JhF7hxHcvL5BHabxp_Z4jjlMH3KYm-VBEp2qaCgI_7GpQQfG_Fmq2mJu-u_wJ11Ko&usqp=CAU" alt="фото 1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt-FB-N_8I1IA4DoRVgl5qJSHxcomlrIL_-g&s" alt="фото 2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEB2MqmRNqAqnPDIIYKWoX-kXDyS-w6vr3mw&s" alt="фото 3">
+    </div>
+    <div class="images">
+        <img src="https://gordonua.com/img/article/16873/91_main-v1699541904.jpg" alt="фото 4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjNWt7QYZab3es1TEToyZpwdNmrIe8ZvwoMQ&s" alt="фото 5">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS22pQvRdfvHD4CQO2cFG12uEmeFDXkHyO-P7NKr43rY51ASPdM-w5iHZRDX-2UFHekmSo&usqp=CAU" alt="фото 6">
+    </div>
+</body>
+</html>
